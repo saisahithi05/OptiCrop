@@ -1,0 +1,616 @@
+{
+    "rice": {
+        "name": "Rice",
+        "description": "Rice is one of the world's most important staple food crops. It thrives in warm and humid climates with abundant water and is widely cultivated across Asia.",
+        "image": "/static/images/rice.jpg",
+        "temperature": "20-35°C",
+        "humidity": "70-90%",
+        "ph": "5.5-7.0",
+        "rainfall": "150-300 mm",
+        "season": "Kharif",
+        "harvest": "120-150 Days",
+        "fertilizer": "Nitrogen-rich fertilizer (Urea, DAP)",
+        "water_requirement": "High",
+        "market_demand": "Very High",
+        "soil_type": "Clayey or Loamy Soil",
+        "suitable_regions": [
+            "West Bengal",
+            "Punjab",
+            "Andhra Pradesh",
+            "Tamil Nadu",
+            "Assam"
+        ],
+        "growing_tips": "Maintain standing water during vegetative growth and ensure proper drainage before harvesting.",
+        "common_uses": [
+            "Staple Food",
+            "Rice Flour",
+            "Processed Foods"
+        ]
+    },
+
+    "maize": {
+        "name": "Maize",
+        "description": "Maize is a versatile cereal crop used for food, animal feed and industrial products. It grows well in fertile, well-drained soils.",
+        "image": "/static/images/maize.jpg",
+        "temperature": "18-30°C",
+        "humidity": "55-75%",
+        "ph": "5.8-7.2",
+        "rainfall": "50-120 mm",
+        "season": "Kharif",
+        "harvest": "90-120 Days",
+        "fertilizer": "Balanced NPK Fertilizer",
+        "water_requirement": "Moderate",
+        "market_demand": "High",
+        "soil_type": "Well-drained Loamy Soil",
+        "suitable_regions": [
+            "Karnataka",
+            "Bihar",
+            "Madhya Pradesh",
+            "Rajasthan"
+        ],
+        "growing_tips": "Provide adequate sunlight and avoid waterlogging during growth.",
+        "common_uses": [
+            "Food",
+            "Animal Feed",
+            "Corn Flour",
+            "Biofuel"
+        ]
+    },
+
+    "chickpea": {
+        "name": "Chickpea",
+        "description": "Chickpea is a protein-rich pulse crop mainly grown during the rabi season. It performs well in cool and dry climates.",
+        "image": "/static/images/chickpea.jpg",
+        "temperature": "18-28°C",
+        "humidity": "40-60%",
+        "ph": "6.0-7.5",
+        "rainfall": "60-100 mm",
+        "season": "Rabi",
+        "harvest": "100-120 Days",
+        "fertilizer": "Phosphorus-rich Fertilizer",
+        "water_requirement": "Low",
+        "market_demand": "High",
+        "soil_type": "Sandy Loam",
+        "suitable_regions": [
+            "Madhya Pradesh",
+            "Rajasthan",
+            "Uttar Pradesh"
+        ],
+        "growing_tips": "Avoid excessive irrigation and ensure proper drainage.",
+        "common_uses": [
+            "Dal",
+            "Flour",
+            "Snacks"
+        ]
+    },
+
+    "kidneybeans": {
+        "name": "Kidney Beans",
+        "description": "Kidney beans are nutritious legumes rich in protein, fiber and minerals. They require fertile soil and moderate temperatures.",
+        "image": "/static/images/kidneybeans.jpg",
+        "temperature": "18-30°C",
+        "humidity": "50-70%",
+        "ph": "6.0-7.5",
+        "rainfall": "60-120 mm",
+        "season": "Rabi",
+        "harvest": "90-110 Days",
+        "fertilizer": "Organic Compost and NPK",
+        "water_requirement": "Moderate",
+        "market_demand": "Medium",
+        "soil_type": "Well-drained Loam",
+        "suitable_regions": [
+            "Himachal Pradesh",
+            "Jammu & Kashmir",
+            "Uttarakhand"
+        ],
+        "growing_tips": "Maintain moderate soil moisture and avoid heavy rainfall during flowering.",
+        "common_uses": [
+            "Curries",
+            "Salads",
+            "Processed Foods"
+        ]
+    },
+
+    "pigeonpeas": {
+        "name": "Pigeon Peas",
+        "description": "Pigeon pea is a drought-resistant pulse crop widely cultivated in tropical and subtropical regions.",
+        "image": "/static/images/pigeonpeas.jpg",
+        "temperature": "20-35°C",
+        "humidity": "50-70%",
+        "ph": "5.0-7.0",
+        "rainfall": "60-150 mm",
+        "season": "Kharif",
+        "harvest": "150-180 Days",
+        "fertilizer": "Phosphorus-based Fertilizer",
+        "water_requirement": "Moderate",
+        "market_demand": "High",
+        "soil_type": "Red and Black Soil",
+        "suitable_regions": [
+            "Maharashtra",
+            "Karnataka",
+            "Gujarat"
+        ],
+        "growing_tips": "Requires full sunlight and performs well under moderate rainfall.",
+        "common_uses": [
+            "Dal",
+            "Animal Feed"
+        ]
+    }
+,
+    "mothbeans": {
+        "name": "Moth Beans",
+        "description": "Moth bean is a drought-tolerant legume crop mainly cultivated in arid and semi-arid regions. It is highly nutritious and suitable for dry climates.",
+        "image": "/static/images/mothbeans.jpg",
+        "temperature": "24-35°C",
+        "humidity": "40-60%",
+        "ph": "6.0-7.5",
+        "rainfall": "30-60 mm",
+        "season": "Kharif",
+        "harvest": "75-90 Days",
+        "fertilizer": "Organic Compost",
+        "water_requirement": "Low",
+        "market_demand": "Medium",
+        "soil_type": "Sandy Loam",
+        "suitable_regions": [
+            "Rajasthan",
+            "Gujarat",
+            "Haryana"
+        ],
+        "growing_tips": "Requires minimal irrigation and grows well in dry soils.",
+        "common_uses": [
+            "Dal",
+            "Sprouts",
+            "Animal Feed"
+        ]
+    },
+
+    "mungbean": {
+        "name": "Mung Bean",
+        "description": "Mung bean is a fast-growing pulse crop valued for its high protein content and easy digestibility.",
+        "image": "/static/images/mungbean.jpg",
+        "temperature": "25-35°C",
+        "humidity": "50-70%",
+        "ph": "6.2-7.2",
+        "rainfall": "60-100 mm",
+        "season": "Kharif",
+        "harvest": "60-75 Days",
+        "fertilizer": "Organic Compost",
+        "water_requirement": "Low",
+        "market_demand": "High",
+        "soil_type": "Well-drained Loamy Soil",
+        "suitable_regions": [
+            "Maharashtra",
+            "Karnataka",
+            "Tamil Nadu"
+        ],
+        "growing_tips": "Harvest when pods mature to avoid seed shattering.",
+        "common_uses": [
+            "Dal",
+            "Sprouts",
+            "Flour"
+        ]
+    },
+
+    "blackgram": {
+        "name": "Black Gram",
+        "description": "Black gram is an important pulse crop used extensively in Indian cuisine. It grows well in warm climates.",
+        "image": "/static/images/blackgram.jpg",
+        "temperature": "25-35°C",
+        "humidity": "60-80%",
+        "ph": "6.0-7.5",
+        "rainfall": "70-120 mm",
+        "season": "Kharif",
+        "harvest": "80-100 Days",
+        "fertilizer": "Organic Manure",
+        "water_requirement": "Moderate",
+        "market_demand": "High",
+        "soil_type": "Clay Loam",
+        "suitable_regions": [
+            "Andhra Pradesh",
+            "Tamil Nadu",
+            "Madhya Pradesh"
+        ],
+        "growing_tips": "Avoid excessive irrigation during flowering.",
+        "common_uses": [
+            "Dal",
+            "Idli Batter",
+            "Dosa Batter"
+        ]
+    },
+
+    "lentil": {
+        "name": "Lentil",
+        "description": "Lentil is a cool-season pulse crop rich in protein and dietary fiber. It performs well in dry winter climates.",
+        "image": "/static/images/lentil.jpg",
+        "temperature": "18-25°C",
+        "humidity": "40-60%",
+        "ph": "6.0-7.5",
+        "rainfall": "50-100 mm",
+        "season": "Rabi",
+        "harvest": "100-120 Days",
+        "fertilizer": "Phosphorus Fertilizer",
+        "water_requirement": "Low",
+        "market_demand": "High",
+        "soil_type": "Sandy Loam",
+        "suitable_regions": [
+            "Uttar Pradesh",
+            "Madhya Pradesh",
+            "Bihar"
+        ],
+        "growing_tips": "Requires cool temperatures and limited irrigation.",
+        "common_uses": [
+            "Dal",
+            "Soup",
+            "Flour"
+        ]
+    },
+
+    "pomegranate": {
+        "name": "Pomegranate",
+        "description": "Pomegranate is a high-value fruit crop known for its antioxidant-rich fruits. It thrives in warm and semi-arid climates.",
+        "image": "/static/images/pomegranate.jpg",
+        "temperature": "20-35°C",
+        "humidity": "40-60%",
+        "ph": "5.5-7.5",
+        "rainfall": "50-100 mm",
+        "season": "Year Round",
+        "harvest": "150-180 Days",
+        "fertilizer": "Potassium-rich Fertilizer",
+        "water_requirement": "Moderate",
+        "market_demand": "Very High",
+        "soil_type": "Well-drained Loamy Soil",
+        "suitable_regions": [
+            "Maharashtra",
+            "Karnataka",
+            "Gujarat"
+        ],
+        "growing_tips": "Regular pruning improves fruit size and yield.",
+        "common_uses": [
+            "Fresh Fruit",
+            "Juice",
+            "Health Products"
+        ]
+    }
+,
+    "banana": {
+        "name": "Banana",
+        "description": "Banana is a tropical fruit crop that requires warm temperatures, high humidity, and regular irrigation. It is one of the most commercially cultivated fruits.",
+        "image": "/static/images/banana.jpg",
+        "temperature": "24-35°C",
+        "humidity": "75-90%",
+        "ph": "6.0-7.5",
+        "rainfall": "100-200 mm",
+        "season": "Year Round",
+        "harvest": "10-12 Months",
+        "fertilizer": "Nitrogen-rich Fertilizer",
+        "water_requirement": "High",
+        "market_demand": "Very High",
+        "soil_type": "Deep Loamy Soil",
+        "suitable_regions": [
+            "Tamil Nadu",
+            "Kerala",
+            "Maharashtra",
+            "Andhra Pradesh"
+        ],
+        "growing_tips": "Provide regular irrigation and protect plants from strong winds.",
+        "common_uses": [
+            "Fresh Fruit",
+            "Juice",
+            "Chips",
+            "Desserts"
+        ]
+    },
+
+    "mango": {
+        "name": "Mango",
+        "description": "Mango is known as the 'King of Fruits'. It grows best in tropical and subtropical climates with plenty of sunlight.",
+        "image": "/static/images/mango.jpg",
+        "temperature": "24-35°C",
+        "humidity": "50-70%",
+        "ph": "5.5-7.5",
+        "rainfall": "75-150 mm",
+        "season": "Summer",
+        "harvest": "5-6 Months",
+        "fertilizer": "Potassium-rich Fertilizer",
+        "water_requirement": "Moderate",
+        "market_demand": "Very High",
+        "soil_type": "Well-drained Loamy Soil",
+        "suitable_regions": [
+            "Uttar Pradesh",
+            "Andhra Pradesh",
+            "Karnataka",
+            "Maharashtra"
+        ],
+        "growing_tips": "Requires full sunlight and periodic pruning for better fruit production.",
+        "common_uses": [
+            "Fresh Fruit",
+            "Juice",
+            "Pickles",
+            "Desserts"
+        ]
+    },
+
+    "grapes": {
+        "name": "Grapes",
+        "description": "Grapes are climbing fruit plants widely cultivated for fresh consumption, juice, raisins, and wine production.",
+        "image": "/static/images/grapes.jpg",
+        "temperature": "18-30°C",
+        "humidity": "50-70%",
+        "ph": "5.5-7.0",
+        "rainfall": "50-100 mm",
+        "season": "Winter",
+        "harvest": "120-140 Days",
+        "fertilizer": "Balanced NPK Fertilizer",
+        "water_requirement": "Moderate",
+        "market_demand": "High",
+        "soil_type": "Sandy Loam",
+        "suitable_regions": [
+            "Maharashtra",
+            "Karnataka",
+            "Tamil Nadu"
+        ],
+        "growing_tips": "Provide strong support structures and regular pruning.",
+        "common_uses": [
+            "Fresh Fruit",
+            "Juice",
+            "Raisins",
+            "Wine"
+        ]
+    },
+
+    "watermelon": {
+        "name": "Watermelon",
+        "description": "Watermelon is a refreshing summer fruit that grows well in warm climates with plenty of sunlight.",
+        "image": "/static/images/watermelon.jpg",
+        "temperature": "22-35°C",
+        "humidity": "60-75%",
+        "ph": "6.0-7.5",
+        "rainfall": "50-100 mm",
+        "season": "Summer",
+        "harvest": "80-90 Days",
+        "fertilizer": "Potassium-rich Fertilizer",
+        "water_requirement": "Moderate",
+        "market_demand": "High",
+        "soil_type": "Sandy Loam",
+        "suitable_regions": [
+            "Karnataka",
+            "Andhra Pradesh",
+            "Tamil Nadu",
+            "Maharashtra"
+        ],
+        "growing_tips": "Ensure good sunlight and avoid waterlogging around roots.",
+        "common_uses": [
+            "Fresh Fruit",
+            "Juice",
+            "Fruit Salad"
+        ]
+    },
+
+    "muskmelon": {
+        "name": "Muskmelon",
+        "description": "Muskmelon is a sweet and aromatic fruit crop grown during the summer season in well-drained sandy soils.",
+        "image": "/static/images/muskmelon.jpg",
+        "temperature": "22-34°C",
+        "humidity": "55-70%",
+        "ph": "6.0-7.5",
+        "rainfall": "50-90 mm",
+        "season": "Summer",
+        "harvest": "80-90 Days",
+        "fertilizer": "Organic Compost",
+        "water_requirement": "Moderate",
+        "market_demand": "High",
+        "soil_type": "Sandy Loam",
+        "suitable_regions": [
+            "Punjab",
+            "Haryana",
+            "Rajasthan",
+            "Uttar Pradesh"
+        ],
+        "growing_tips": "Grow in full sunlight and harvest when fruits develop a pleasant aroma.",
+        "common_uses": [
+            "Fresh Fruit",
+            "Juice",
+            "Desserts"
+        ]
+    }
+,
+    "apple": {
+        "name": "Apple",
+        "description": "Apple is a temperate fruit crop requiring cool climates and well-drained fertile soils. It is one of the most economically valuable fruit crops.",
+        "image": "/static/images/apple.jpg",
+        "temperature": "15-24°C",
+        "humidity": "60-80%",
+        "ph": "5.5-6.8",
+        "rainfall": "100-125 mm",
+        "season": "Winter",
+        "harvest": "150-180 Days",
+        "fertilizer": "Organic Compost with NPK",
+        "water_requirement": "Moderate",
+        "market_demand": "Very High",
+        "soil_type": "Well-drained Loamy Soil",
+        "suitable_regions": [
+            "Jammu & Kashmir",
+            "Himachal Pradesh",
+            "Uttarakhand"
+        ],
+        "growing_tips": "Requires chilling hours during winter and annual pruning for healthy fruit production.",
+        "common_uses": [
+            "Fresh Fruit",
+            "Juice",
+            "Jam",
+            "Desserts"
+        ]
+    },
+
+    "orange": {
+        "name": "Orange",
+        "description": "Orange is a citrus fruit rich in Vitamin C. It grows best in warm climates with moderate rainfall and fertile soil.",
+        "image": "/static/images/orange.jpg",
+        "temperature": "18-30°C",
+        "humidity": "55-75%",
+        "ph": "5.5-7.0",
+        "rainfall": "100-150 mm",
+        "season": "Winter",
+        "harvest": "240-300 Days",
+        "fertilizer": "Balanced NPK Fertilizer",
+        "water_requirement": "Moderate",
+        "market_demand": "High",
+        "soil_type": "Sandy Loam",
+        "suitable_regions": [
+            "Maharashtra",
+            "Punjab",
+            "Nagpur",
+            "Assam"
+        ],
+        "growing_tips": "Avoid frost and maintain regular irrigation during flowering.",
+        "common_uses": [
+            "Fresh Fruit",
+            "Juice",
+            "Jam",
+            "Essential Oil"
+        ]
+    },
+
+    "papaya": {
+        "name": "Papaya",
+        "description": "Papaya is a fast-growing tropical fruit crop producing nutritious fruits throughout the year.",
+        "image": "/static/images/papaya.jpg",
+        "temperature": "22-35°C",
+        "humidity": "60-85%",
+        "ph": "6.0-7.5",
+        "rainfall": "120-180 mm",
+        "season": "Year Round",
+        "harvest": "8-10 Months",
+        "fertilizer": "Nitrogen-rich Fertilizer",
+        "water_requirement": "Moderate",
+        "market_demand": "High",
+        "soil_type": "Well-drained Sandy Loam",
+        "suitable_regions": [
+            "Andhra Pradesh",
+            "Tamil Nadu",
+            "Karnataka",
+            "Kerala"
+        ],
+        "growing_tips": "Avoid waterlogging and provide adequate spacing between plants.",
+        "common_uses": [
+            "Fresh Fruit",
+            "Juice",
+            "Desserts",
+            "Medicinal Uses"
+        ]
+    },
+
+    "coconut": {
+        "name": "Coconut",
+        "description": "Coconut is a tropical plantation crop that thrives in humid coastal regions with abundant rainfall.",
+        "image": "/static/images/coconut.jpg",
+        "temperature": "25-35°C",
+        "humidity": "70-90%",
+        "ph": "5.5-7.5",
+        "rainfall": "150-300 mm",
+        "season": "Year Round",
+        "harvest": "12 Months",
+        "fertilizer": "Organic Compost and Potassium",
+        "water_requirement": "High",
+        "market_demand": "Very High",
+        "soil_type": "Coastal Sandy Soil",
+        "suitable_regions": [
+            "Kerala",
+            "Tamil Nadu",
+            "Karnataka",
+            "Goa"
+        ],
+        "growing_tips": "Requires regular irrigation during dry periods and plenty of sunlight.",
+        "common_uses": [
+            "Coconut Water",
+            "Oil",
+            "Copra",
+            "Cooking"
+        ]
+    },
+
+    "cotton": {
+        "name": "Cotton",
+        "description": "Cotton is one of the world's most important fiber crops used extensively in the textile industry.",
+        "image": "/static/images/cotton.jpg",
+        "temperature": "21-32°C",
+        "humidity": "50-70%",
+        "ph": "5.8-8.0",
+        "rainfall": "50-100 mm",
+        "season": "Kharif",
+        "harvest": "180-200 Days",
+        "fertilizer": "Nitrogen and Potassium Fertilizer",
+        "water_requirement": "Moderate",
+        "market_demand": "Very High",
+        "soil_type": "Black Cotton Soil",
+        "suitable_regions": [
+            "Gujarat",
+            "Maharashtra",
+            "Punjab",
+            "Telangana"
+        ],
+        "growing_tips": "Requires plenty of sunlight and pest monitoring throughout the growing season.",
+        "common_uses": [
+            "Textiles",
+            "Cottonseed Oil",
+            "Medical Cotton"
+        ]
+    }
+,
+    "jute": {
+        "name": "Jute",
+        "description": "Jute is a natural fiber crop widely cultivated in humid tropical regions. It is known as the 'Golden Fiber' because of its economic importance and eco-friendly nature.",
+        "image": "/static/images/jute.jpg",
+        "temperature": "24-35°C",
+        "humidity": "70-90%",
+        "ph": "6.0-7.5",
+        "rainfall": "150-250 mm",
+        "season": "Kharif",
+        "harvest": "120-150 Days",
+        "fertilizer": "Nitrogen-rich Fertilizer",
+        "water_requirement": "High",
+        "market_demand": "High",
+        "soil_type": "Alluvial Soil",
+        "suitable_regions": [
+            "West Bengal",
+            "Assam",
+            "Bihar",
+            "Odisha"
+        ],
+        "growing_tips": "Requires warm temperatures, high humidity, and regular rainfall. Harvest before flowering for the best fiber quality.",
+        "common_uses": [
+            "Bags",
+            "Ropes",
+            "Textiles",
+            "Eco-friendly Packaging"
+        ]
+    },
+
+    "coffee": {
+        "name": "Coffee",
+        "description": "Coffee is a valuable plantation crop grown under partial shade in tropical highland regions. It is one of the world's most traded agricultural commodities.",
+        "image": "/static/images/coffee.jpg",
+        "temperature": "18-28°C",
+        "humidity": "60-80%",
+        "ph": "5.5-6.5",
+        "rainfall": "150-250 mm",
+        "season": "Year Round",
+        "harvest": "3-4 Years (First Harvest)",
+        "fertilizer": "Organic Compost with NPK",
+        "water_requirement": "Moderate",
+        "market_demand": "Very High",
+        "soil_type": "Well-drained Loamy Soil",
+        "suitable_regions": [
+            "Karnataka",
+            "Kerala",
+            "Tamil Nadu"
+        ],
+        "growing_tips": "Grow under shade trees, maintain adequate moisture, and prune regularly for healthy production.",
+        "common_uses": [
+            "Coffee Beverage",
+            "Instant Coffee",
+            "Coffee Powder",
+            "Export"
+        ]
+    }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiCrop - Results</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --green: #1f6b35; --green-dark: #164f27; --ink: #1f2933; --muted: #667085; --line: #e3e8e5; }
+        body { font-family: 'Inter', 'Noto Sans Telugu', sans-serif; background: #f5f7f5; color: var(--ink); }
+        .topbar { background: var(--green); color: #fff; padding: 28px 0; }
+        .topbar h1 { font-size: 1.6rem; font-weight: 700; margin: 0; }
+        .topbar p { margin: 4px 0 0; opacity: .85; }
+        .crop-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; height: 100%; }
+        .crop-card.top { border: 2px solid var(--green); }
+        .crop-img, .crop-placeholder { height: 170px; width: 100%; }
+        .crop-img { object-fit: cover; }
+        .crop-placeholder { background: #e8eeea; color: var(--muted); display: flex; align-items: center; justify-content: center; font-size: .85rem; }
+        .rank { font-size: .8rem; font-weight: 600; color: var(--muted); }
+        .crop-card.top .rank { color: var(--green); }
+        .crop-name { font-size: 1.15rem; font-weight: 700; margin: 2px 0 0; }
+        .crop-te { font-size: 1rem; color: var(--muted); }
+        .bar { height: 10px; background: #e8eeea; border-radius: 6px; overflow: hidden; margin-top: 14px; }
+        .bar > div { height: 100%; background: var(--green); border-radius: 6px; }
+        .conf { font-size: .85rem; color: var(--muted); margin-top: 6px; }
+        .summary { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 24px; }
+        .summary h2 { font-size: 1rem; font-weight: 600; margin-bottom: 16px; }
+        .summary dt { font-size: .8rem; font-weight: 500; color: var(--muted); }
+        .summary dd { font-weight: 600; margin-bottom: 0; }
+        .btn-main { background: var(--green); color: #fff; font-weight: 600; padding: 10px 24px; border-radius: 10px; }
+        .btn-main:hover, .btn-main:focus-visible { background: var(--green-dark); color: #fff; }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="container" style="max-width: 960px;">
+            <h1>OptiCrop</h1>
+            <p>Top 3 crops for your soil and weather</p>
+        </div>
+    </header>
+
+    <main class="container py-4" style="max-width: 960px;">
+
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+            <strong>We couldn't generate a recommendation.</strong><br>{{ error }}
+        </div>
+        {% else %}
+
+        <div class="row g-4 mb-4">
+            {% for item in recommendations %}
+            <div class="col-md-4">
+                <div class="crop-card {% if loop.first %}top{% endif %}">
+                    {% if item.image %}
+                        <img src="{{ item.image }}" class="crop-img" alt="{{ item.crop_en }}">
+                    {% else %}
+                        <div class="crop-placeholder">No image available</div>
+                    {% endif %}
+                    <div class="p-3">
+                        <div class="rank">{% if loop.first %}Best match{% else %}Option {{ loop.index }}{% endif %}</div>
+                        <div class="crop-name">{{ item.crop_en }}</div>
+                        {% if item.crop_te %}<div class="crop-te">{{ item.crop_te }}</div>{% endif %}
+                        <div class="bar"><div style="width: {{ item.confidence }}%;"></div></div>
+                        <div class="conf">{{ item.confidence }}% confidence</div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <section class="summary">
+            <h2>Values you entered</h2>
+            <dl class="row row-cols-2 row-cols-md-4 g-3 mb-0">
+                {% for f in soil_fields + climate_fields %}
+                <div class="col">
+                    <dt>{{ f.label }}</dt>
+                    <dd>{{ inputs[f.name] }} {{ f.unit }}</dd>
+                </div>
+                {% endfor %}
+            </dl>
+        </section>
+
+        {% endif %}
+
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-main">{% if error %}Fix and try again{% else %}Check another field{% endif %}</a>
+        </div>
+    </main>
+</body>
+</html>
