@@ -30,8 +30,10 @@
 <body>
     <header class="topbar">
         <div class="container" style="max-width: 880px;">
-            <h1>OptiCrop</h1>
-            <p>Enter your soil and weather details to see the 3 best crops for your field.</p>
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <div><h1>OptiCrop</h1><p data-en="Enter your soil and weather details to see the 3 best crops for your field." data-te="మీ పొలం కోసం ఉత్తమమైన 3 పంటలను తెలుసుకోవడానికి నేల మరియు వాతావరణ వివరాలను నమోదు చేయండి.">Enter your soil and weather details to see the 3 best crops for your field.</p></div>
+                <button type="button" class="btn btn-light btn-sm" id="languageToggle" onclick="toggleLanguage()">తెలుగు</button>
+            </div>
         </div>
     </header>
 
@@ -39,12 +41,12 @@
         <div class="panel">
             <form action="/predict" method="POST">
 
-                <div class="group-title">Soil test values</div>
-                <div class="group-hint">Take these from your Soil Health Card.</div>
+                <div class="group-title" data-en="Soil test values" data-te="నేల పరీక్ష విలువలు">Soil test values</div>
+                <div class="group-hint" data-en="Take these from your Soil Health Card." data-te="మీ సాయిల్ హెల్త్ కార్డ్ నుండి ఈ విలువలను నమోదు చేయండి.">Take these from your Soil Health Card.</div>
                 <div class="row g-3">
                     {% for f in soil_fields %}
                     <div class="col-md-3 col-6">
-                        <label class="form-label" for="{{ f.name }}">{{ f.label }}</label>
+                        <label class="form-label" for="{{ f.name }}" data-en="{{ f.label }}" data-te="{{ {'Nitrogen (N)':'నత్రజని (N)', 'Phosphorus (P)':'భాస్వరం (P)', 'Potassium (K)':'పొటాషియం (K)', 'Soil pH':'నేల pH', 'Temperature':'ఉష్ణోగ్రత', 'Relative humidity':'సాపేక్ష తేమ', 'Rainfall':'వర్షపాతం'}[f.label] }}">{{ f.label }}</label>
                         <div class="input-group">
                             <input type="number" step="any" class="form-control" id="{{ f.name }}" name="{{ f.name }}"
                                    min="{{ f.min }}" max="{{ f.max }}" placeholder="e.g. {{ f.example }}" required>
@@ -57,12 +59,17 @@
 
                 <hr>
 
-                <div class="group-title">Weather conditions</div>
-                <div class="group-hint">Average values for the growing season.</div>
+                <div class="group-title" data-en="Weather conditions" data-te="వాతావరణ పరిస్థితులు">Weather conditions</div>
+                <div class="group-hint" data-en="Use growing-season averages where possible." data-te="సాధ్యమైనంతవరకు పంట పెరుగుదల కాలపు సగటు విలువలను ఉపయోగించండి.">Use growing-season averages where possible.</div>
+                <div class="row g-2 mb-3 align-items-end">
+                    <div class="col-md-6"><label class="form-label" for="weatherCity" data-en="Enter city to retrieve weather" data-te="వాతావరణం పొందడానికి నగరం పేరు నమోదు చేయండి">Enter city to retrieve weather</label><input class="form-control" id="weatherCity" placeholder="e.g. Vijayawada"></div>
+                    <div class="col-md-3"><button type="button" class="btn btn-outline-success w-100" id="weatherBtn" onclick="fetchWeather()" data-en="Auto-fill weather" data-te="వాతావరణ వివరాలు పొందండి">Auto-fill weather</button></div>
+                    <div class="col-12"><small id="weatherStatus" class="text-muted" aria-live="polite"></small><div class="range-note">Weather data provided by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>.</div></div>
+                </div>
                 <div class="row g-3">
                     {% for f in climate_fields %}
                     <div class="col-md-4">
-                        <label class="form-label" for="{{ f.name }}">{{ f.label }}</label>
+                        <label class="form-label" for="{{ f.name }}" data-en="{{ f.label }}" data-te="{{ {'Nitrogen (N)':'నత్రజని (N)', 'Phosphorus (P)':'భాస్వరం (P)', 'Potassium (K)':'పొటాషియం (K)', 'Soil pH':'నేల pH', 'Temperature':'ఉష్ణోగ్రత', 'Relative humidity':'సాపేక్ష తేమ', 'Rainfall':'వర్షపాతం'}[f.label] }}">{{ f.label }}</label>
                         <div class="input-group">
                             <input type="number" step="any" class="form-control" id="{{ f.name }}" name="{{ f.name }}"
                                    min="{{ f.min }}" max="{{ f.max }}" placeholder="e.g. {{ f.example }}" required>
@@ -73,9 +80,36 @@
                     {% endfor %}
                 </div>
 
-                <button type="submit" class="btn btn-main mt-4">Get top 3 crops</button>
+                <button type="submit" class="btn btn-main mt-4" data-en="Get top 3 crops" data-te="ఉత్తమ 3 పంటలను పొందండి">Get top 3 crops</button>
             </form>
         </div>
     </main>
+<script>
+let currentLanguage = 'en';
+function toggleLanguage() {
+  currentLanguage = currentLanguage === 'en' ? 'te' : 'en';
+  document.querySelectorAll('[data-en][data-te]').forEach(el => { el.textContent = el.dataset[currentLanguage]; });
+  document.getElementById('languageToggle').textContent = currentLanguage === 'en' ? 'తెలుగు' : 'English';
+}
+async function fetchWeather() {
+  const city = document.getElementById('weatherCity').value.trim();
+  const status = document.getElementById('weatherStatus');
+  const button = document.getElementById('weatherBtn');
+  if (!city) { status.textContent = 'Please enter a city name.'; return; }
+  button.disabled = true; status.textContent = 'Fetching weather…';
+  try {
+    const response = await fetch('/weather?city=' + encodeURIComponent(city));
+    const data = await response.json();
+    if (!response.ok || !data.success) throw new Error(data.error || 'Weather lookup failed.');
+    if (data.temperature !== null) document.getElementById('temperature').value = data.temperature;
+    if (data.humidity !== null) document.getElementById('humidity').value = data.humidity;
+    const rainfall = document.getElementById('rainfall');
+    if (data.rainfall !== null && data.rainfall >= Number(rainfall.min) && data.rainfall <= Number(rainfall.max)) rainfall.value = data.rainfall;
+    document.getElementById('weatherCity').value = data.city;
+    status.textContent = 'Weather loaded for ' + data.city + '. Temperature and humidity are current readings. Rainfall is the next 7-day forecast total, not seasonal rainfall. ' + (data.rainfall >= Number(rainfall.min) && data.rainfall <= Number(rainfall.max) ? 'Check and replace it with a growing-season estimate when available.' : 'The 7-day rainfall total is outside the model input range, so enter a growing-season rainfall estimate manually.');
+  } catch (error) { status.textContent = error.message; }
+  finally { button.disabled = false; }
+}
+</script>
 </body>
 </html>

@@ -35,8 +35,8 @@
 <body>
     <header class="topbar">
         <div class="container" style="max-width: 960px;">
-            <h1>OptiCrop</h1>
-            <p>Top 3 crops for your soil and weather</p>
+            <div class="d-flex justify-content-between align-items-center"><div class="d-flex justify-content-between align-items-center"><h1>OptiCrop</h1><button type="button" class="btn btn-light btn-sm" id="languageToggle" onclick="toggleLanguage()">తెలుగు</button></div><button type="button" class="btn btn-light btn-sm" id="languageToggle" onclick="toggleLanguage()">తెలుగు</button></div>
+            <p data-en="Top 3 crops for your soil and weather" data-te="మీ నేల మరియు వాతావరణానికి సరిపోయే 3 పంటలు">Top 3 crops for your soil and weather</p>
         </div>
     </header>
 
@@ -62,7 +62,10 @@
                         <div class="crop-name">{{ item.crop_en }}</div>
                         {% if item.crop_te %}<div class="crop-te">{{ item.crop_te }}</div>{% endif %}
                         <div class="bar"><div style="width: {{ item.confidence }}%;"></div></div>
-                        <div class="conf">{{ item.confidence }}% confidence</div>
+                        <div class="conf">{{ item.confidence }}% model score</div>
+                        <div class="mt-3"><strong data-en="Why this crop?" data-te="ఈ పంట ఎందుకు?">Why this crop?</strong>
+                            <ul class="small mt-2 mb-0">{% for reason in item.reasons %}<li data-en="{{ reason.en }}" data-te="{{ reason.te }}">{{ reason.en }}</li>{% endfor %}</ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -70,11 +73,11 @@
         </div>
 
         <section class="summary">
-            <h2>Values you entered</h2>
+            <h2 data-en="Values you entered" data-te="మీరు నమోదు చేసిన విలువలు">Values you entered</h2>
             <dl class="row row-cols-2 row-cols-md-4 g-3 mb-0">
                 {% for f in soil_fields + climate_fields %}
                 <div class="col">
-                    <dt>{{ f.label }}</dt>
+                    <dt data-en="{{ f.label }}" data-te="{{ {'Nitrogen (N)':'నత్రజని (N)', 'Phosphorus (P)':'భాస్వరం (P)', 'Potassium (K)':'పొటాషియం (K)', 'Soil pH':'నేల pH', 'Temperature':'ఉష్ణోగ్రత', 'Relative humidity':'సాపేక్ష తేమ', 'Rainfall':'వర్షపాతం'}[f.label] }}">{{ f.label }}</dt>
                     <dd>{{ inputs[f.name] }} {{ f.unit }}</dd>
                 </div>
                 {% endfor %}
@@ -87,5 +90,13 @@
             <a href="/" class="btn btn-main">{% if error %}Fix and try again{% else %}Check another field{% endif %}</a>
         </div>
     </main>
+<script>
+let currentLanguage = 'en';
+function toggleLanguage() {
+  currentLanguage = currentLanguage === 'en' ? 'te' : 'en';
+  document.querySelectorAll('[data-en][data-te]').forEach(el => { el.textContent = el.dataset[currentLanguage]; });
+  document.getElementById('languageToggle').textContent = currentLanguage === 'en' ? 'తెలుగు' : 'English';
+}
+</script>
 </body>
 </html>
